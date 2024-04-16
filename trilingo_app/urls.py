@@ -11,4 +11,5 @@ urlpatterns = [
     path('filter/alphabet/kz/<slug:slug>/', views.filter_by_kz_page, name='filter_by_kz_page'),
     path('filter/alphabet/ru/<slug:slug>/', views.filter_by_ru_page, name='filter_by_ru_page'),
     path('filter/alphabet/en/<slug:slug>/', views.filter_by_en_page, name='filter_by_en_page'),
+
 ]

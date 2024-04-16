@@ -16,7 +16,8 @@
         <div class="theme-list">
             {% for theme in themes %}
             <a href="{% url 'theme_detail_page' slug=theme.slug %}" class="theme-item">
-                <div class="themes-row">
+                <div class="themes-column">
+                    <img src="{{ theme.image.url }}" class="theme-img" alt="{{ theme.word_kz }} {{ theme.word_ru }} {{ theme.word_en }}">
                     <div class="themes-text">
                         <h3>{{ theme.word_kz }}</h3>
                     </div>
@@ -27,8 +28,8 @@
                         <h3>{{ theme.word_en }}</h3>
                     </div>
                 </div>
-            </a>  
-            {% endfor %} 
+            </a>
+            {% endfor %}
         </div>
     </div>
 </section>

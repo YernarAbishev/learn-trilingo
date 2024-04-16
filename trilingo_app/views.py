@@ -78,3 +78,4 @@ def filter_by_en_page(request, slug):
         'words': words
     }
     return render(request, "./words-by-en.html", context)
+

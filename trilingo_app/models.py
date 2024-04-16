@@ -71,6 +71,7 @@ class Theme(models.Model):
     word_kz = models.CharField("Название темы на казахском", max_length=35, default="")
     word_ru = models.CharField("Название темы на русском", max_length=35, default="")
     word_en = models.CharField("Название темы на английском", max_length=35, default="")
+    image = models.ImageField("Изображение темы", upload_to="themes/", default="")
     slug = models.SlugField(unique=True, blank=True, editable=False)
 
     def __str__(self):

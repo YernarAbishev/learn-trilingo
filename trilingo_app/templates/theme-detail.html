@@ -13,13 +13,13 @@
             <a href="{% url 'alphabets_en_page' %}" class="button-primary">Алфавит EN</a>
             <ul class="langs-nav">
                 <li class="langs-nav-item">
-                    <a href="#" class="emoji-sm" id="kz-flag">🇰🇿</a>
+                    <a href="#" class="emoji-sm" ><img src="{% static './images/kz.jpg' %}" width="32px"></a>
                 </li>
                 <li class="langs-nav-item">
-                    <a href="#" class="emoji-sm" id="ru-flag">🇷🇺</a>
+                    <a href="#" class="emoji-sm"><img src="{% static './images/ru.jpeg' %}" width="32px"></a>
                 </li>
                 <li class="langs-nav-item">
-                    <a href="#" class="emoji-sm" id="en-flag">🇬🇧</a>
+                    <a href="#" class="emoji-sm" ><img src="{% static './images/en.png' %}" width="32px"></a>
                 </li>
             </ul>
         </div>
@@ -34,8 +34,8 @@
                     <div class="letter-theme-detail">
                         <div class="letter kz" id="kz">{{ word.word_kz.word }}</div>
                         <div class="subletter">{{ word.word_kz.subword }}</div>
-                        <div class="description">{{ word.word_kz.description }}</div>
-                        <div class="audio">
+                        <div class="description" style="text-align: center;">{{ word.word_kz.description }}</div>
+                        <div class="audio" style="text-align: center;">
                             <audio controls>
                                 <source src="{{ word.word_kz.voice.url }}" type="audio/mpeg" />
                             </audio>
@@ -55,6 +55,10 @@
                         <div class="letter en" id="en">{{ word.word_en.word }}</div>
                         <div class="subletter">{{ word.word_en.subword }}</div>
                         <div class="description">{{ word.word_en.description }}</div>
+                        {% if word.word_en.transcript  %}
+                        <div class="description" style="text-align: center; font-weight: 600;">{{ word.word_en.transcript }}</div>
+                        {% else %}
+                        {% endif %}
                         <div class="audio">
                             <audio controls>
                                 <source src="{{ word.word_en.voice.url }}" type="audio/mpeg" />
